@@ -9,41 +9,33 @@ import calendar
 def getSchedule():
     return { # November
             8:[
-                "Restart all FPS servers",
-                "Upload Circular"
+                "Task 1",
+                "Task 2"
                 ],
             9:[
-                "Update FPS Lottery",
-                "Check BHTPA circular for age"
+                "Task 3",
+                "Task 4"
                 ],
             10:[
-                "FPS season starts"
+                "Task 5"
                 ],
             15:[
-                "Jobs gov meeting with REB"
+                "Task 6"
                 ],
             20:[
-                "BHTPA send sign mail",
-                "Meeting with PD sir"
+                "Task 7",
+                "Task 8"
                 ],
             21:[
-                "ETSAF Technical Meeting",
-                "Update FPS Target Info"
+                "Task 9",
+                "Task 10"
                 ],
             22:[
-                "e-Service bus write up",
-                "FPS match upazila"
+                "Task 11",
+                "Task 12"
                 ],
             27:[
-                "BHTPA send sign mail"
-                ]
-        }
-    return { # December
-            4:[
-                "BHTPA Payment Reminder"
-                ],
-            8:[
-                "BHTPA send sign mail"
+                "Task 13"
                 ]
         }
 
