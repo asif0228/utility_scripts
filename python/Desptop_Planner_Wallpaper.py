@@ -7,8 +7,8 @@ import datetime
 import calendar
 
 def getSchedule():
-    return { # November
-            8:[
+    return { # December
+             8:[
                 "Task 1",
                 "Task 2"
                 ],
@@ -38,6 +38,7 @@ def getSchedule():
                 "Task 13"
                 ]
         }
+    
 
 def getTable(year, month):
     schedule = getSchedule();
@@ -54,10 +55,13 @@ def getTable(year, month):
             r.append([])
             r.append([])
         r[cnt].append(i)
+        t=None
         if i in schedule:
-            t=""
             for j in schedule[i]:
-                t+="\n- "+j
+                if t==None:
+                    t="- "+j
+                else:
+                    t+="\n- "+j
             r[cnt+1].append(t)
         else:
             r[cnt+1].append("")
@@ -67,7 +71,7 @@ def getTable(year, month):
     return r
 
 def plotTable():
-    plt.rcParams["figure.figsize"] = [11, 5]
+    plt.rcParams["figure.figsize"] = [11, 6]
     plt.rcParams["figure.autolayout"] = True
     fig, ax = plt.subplots(1, 1)
     
@@ -81,8 +85,17 @@ def plotTable():
     table = ax.table(cellText=df.values, colLabels=df.columns, loc='center', cellLoc='center')
     table.auto_set_font_size(False)
     table.set_fontsize(7)
-    table.scale(1.3,1.8)
+    table.scale(1.3,3)
     #fig.tight_layout()
+    
+    # Set row height
+    cellDict = table.get_celld()
+    for i in range(7):
+        for j in range(10):
+            if j==0 or j%2==1:
+                cellDict[(j,i)].set_height(.04)
+            else:
+                cellDict[(j,i)].set_height(0.16)
 
 
 def main():
